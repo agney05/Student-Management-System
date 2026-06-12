@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Students</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">Home</a> |
+
+        <a href="/students">Students</a> |
+
+        <a href="/logout">Logout</a>
+
+    </nav>
+
+    <hr>
+
+<h1>Dashboard</h1>
+
+<p>Total Students : {{ count }}</p>
+
+<br>
+
+<table border="1">
+
+<tr>
+    <th>Branch</th>
+    <th>Count</th>
+</tr>
+
+{% for branch in branch_count %}
+
+<tr>
+    <td>{{ branch[0] }}</td>
+    <td>{{ branch[1] }}</td>
+
+</tr>
+
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
